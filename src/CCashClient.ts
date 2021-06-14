@@ -28,7 +28,7 @@ export class CCashClient implements ICCashClient {
 
   log(user: string, pass: string): Promise<number[]> {
     return this.http
-      .get(`/${user}/bal`, {
+      .get(`/${user}/log`, {
         headers: { Password: pass },
       })
       .then((response) => this.handleError(response) || response.data.value);
